@@ -101,7 +101,6 @@ duolingo-clone/
 │   └── package.json
 └── README.md
 
----
 
 ## 🚀 Live Demo
 
