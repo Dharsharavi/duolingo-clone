@@ -71,6 +71,12 @@ The engine supports five distinct exercise models with real-time feedback:
 
 ---
 
+## 🚀 Live Demo
+
+Live at :https://duolingo-clone-frontend-45cr.onrender.com
+
+---
+
 ## 🏗️ Architecture Overview
 
 The system follows a decoupled client-server architecture communicating over a RESTful JSON API:
@@ -101,8 +107,4 @@ duolingo-clone/
 │   └── package.json
 └── README.md
 
-
-## 🚀 Live Demo
-
-Live at :https://duolingo-clone-frontend-45cr.onrender.com
 
