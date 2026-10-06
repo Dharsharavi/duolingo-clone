@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+:root {
+  --background: #131f24;
+  --foreground: #f1f5f9;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  user-select: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Duolingo 3D Button Effects */
+.btn-3d-green {
+  background-color: #58cc02;
+  color: #ffffff;
+  border-bottom: 4px solid #46a302;
+  border-radius: 1rem;
+  font-weight: 700;
+  transition: all 0.1s ease-in-out;
+}
+.btn-3d-green:hover { background-color: #61e002; }
+.btn-3d-green:active { border-bottom-width: 0px; transform: translateY(4px); }
+
+.btn-3d-gray {
+  background-color: #e5e5e5;
+  color: #afafaf;
+  border-bottom: 4px solid #d4d4d4;
+  border-radius: 1rem;
+  font-weight: 700;
+  cursor: not-allowed;
+}
+
+.btn-3d-blue {
+  background-color: #1cb0f6;
+  color: #ffffff;
+  border-bottom: 4px solid #1899d6;
+  border-radius: 1rem;
+  font-weight: 700;
+  transition: all 0.1s ease-in-out;
+}
+.btn-3d-blue:hover { background-color: #20b8ff; }
+.btn-3d-blue:active { border-bottom-width: 0px; transform: translateY(4px); }
+
+.btn-3d-white {
+  background-color: #ffffff;
+  color: #4b4b4b;
+  border: 2px solid #e5e5e5;
+  border-bottom: 4px solid #e5e5e5;
+  border-radius: 1rem;
+  font-weight: 700;
+  transition: all 0.1s ease-in-out;
+}
+.btn-3d-white:hover { background-color: #f7f7f7; }
+.btn-3d-white:active { border-bottom-width: 2px; transform: translateY(2px); }
+
+/* ========================================================
+   THEME LOGIC: DEFAULT IS DUOLINGO NIGHT (DARK)
+   ======================================================== */
+:root {
+  color-scheme: dark;
+}
+
+header, .sticky {
+  background-color: #131f24;
+  border-color: #2b3840;
+}
+
+.theme-bg {
+  background-color: #131f24;
+}
+
+.theme-card {
+  background-color: #131f24;
+  border-color: #2b3840;
+}
+
+.theme-row-hover:hover {
+  background-color: #1a2c35;
+}
+
+.theme-user-row {
+  background-color: #1b3a4b;
+}
+.theme-user-row:hover {
+  background-color: #20475c;
+}
+
+.theme-text-primary {
+  color: #f1f5f9;
+}
+
+.theme-sidebar {
+  background-color: #131f24;
+  border-color: #2b3840;
+}
+
+/* ========================================================
+   LIGHT MODE OVERRIDE (when html has class 'light')
+   ======================================================== */
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+html.light header,
+html.light .sticky {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-color: #e5e7eb;
+}
+
+html.light .theme-bg {
+  background-color: #ffffff;
+}
+
+html.light .theme-card {
+  background-color: #ffffff;
+  border-color: #e5e7eb;
+}
+
+html.light .theme-row-hover:hover {
+  background-color: #f7f7f7;
+}
+
+html.light .theme-user-row {
+  background-color: #ddf4ff;
+}
+html.light .theme-user-row:hover {
+  background-color: #ceeefe;
+}
+
+html.light .theme-text-primary {
+  color: #1f2937;
+}
+
+html.light .theme-sidebar {
+  background-color: #ffffff;
+  border-color: #e5e7eb;
+}
+/* ========================================================
+   GLOBAL AUTO-APPLY: OVERRIDE BASE TAILWIND STYLES
+   ======================================================== */
+
+/* Dark Mode (Default) Overrides */
+html:not(.light) div.min-h-screen,
+html:not(.light) main,
+html:not(.light) .bg-white {
+  background-color: #131f24 !important;
+}
+
+html:not(.light) .border-gray-200,
+html:not(.light) .border-gray-100,
+html:not(.light) .border {
+  border-color: #2b3840 !important;
+}
+
+html:not(.light) .text-gray-800,
+html:not(.light) .text-gray-700 {
+  color: #f1f5f9 !important;
+}
+
+html:not(.light) .bg-gray-50 {
+  background-color: #1a2c35 !important;
+}
+
+/* Light Mode Overrides */
+html.light div.min-h-screen,
+html.light main,
+html.light .bg-white {
+  background-color: #ffffff !important;
+}
+
+html.light .border-gray-200,
+html.light .border-gray-100 {
+  border-color: #e5e7eb !important;
+}
+
+html.light .text-gray-800 {
+  color: #1f2937 !important;
+}
+
+html.light .bg-gray-50 {
+  background-color: #f9fafb !important;
+}
