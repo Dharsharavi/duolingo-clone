@@ -100,3 +100,12 @@ duolingo-clone/
 │   │       └── TopBar.tsx        # Heads-Up Display (Streak, Gems, Hearts)
 │   └── package.json
 └── README.md
+
+---
+
+## 🚀 Live Demo
+
+- **Frontend App**: [https://duolingo-clone-frontend-45cr.onrender.com](https://duolingo-clone-frontend-45cr.onrender.com)
+- **Backend API (Swagger Docs)**: [https://duolingo-clone-ycq7.onrender.com/docs](https://duolingo-clone-ycq7.onrender.com/docs)
+
+> **Note**: Both services are hosted on Render's free tier. If the app has been idle, the initial load may take 30–50 seconds for the backend instance to spin up.
