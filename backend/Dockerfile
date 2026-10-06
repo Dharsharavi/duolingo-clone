@@ -3,15 +3,13 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Copy requirements and install
-COPY backend/requirements.txt ./requirements.txt
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy backend source code
-COPY backend/ ./backend/
+# Copy all files from backend
+COPY . ./
 
-WORKDIR /app/backend
-
-# Seed database
+# Run the database seeder
 RUN python seed.py
 
 ENV PORT=8000
