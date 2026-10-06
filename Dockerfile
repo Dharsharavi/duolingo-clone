@@ -2,19 +2,16 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-# Copy requirements and install dependencies
-COPY backend/requirements.txt ./requirements.txt
+# Copy requirements from current context
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy backend source code
-COPY backend/ ./backend/
+# Copy backend files
+COPY . ./
 
-WORKDIR /app/backend
-
-# Seed initial database
+# Run initial database seed
 RUN python seed.py
 
-# Expose port and run FastAPI
 ENV PORT=8000
 EXPOSE 8000
 
