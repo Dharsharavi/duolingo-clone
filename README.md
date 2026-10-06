@@ -105,6 +105,5 @@ duolingo-clone/
 
 ## 🚀 Live Demo
 
-[Launch Live Demo](https://duolingo-clone-frontend-45cr.onrender.com/)
+Live at :https://duolingo-clone-frontend-45cr.onrender.com
 
----
