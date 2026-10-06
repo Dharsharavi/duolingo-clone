@@ -105,7 +105,9 @@ duolingo-clone/
 
 ## 🚀 Live Demo
 
-- **Frontend App**: [Launch Live Demo](https://duolingo-clone-frontend-45cr.onrender.com)
-- **Backend API**: [View Swagger Docs](https://duolingo-clone-ycq7.onrender.com/docs)
+- **Frontend App:** [Launch Live Demo](https://duolingo-clone-frontend-45cr.onrender.com)
+- **Backend API:** [View Swagger Docs](https://duolingo-clone-ycq7.onrender.com/docs)
 
-> **Note**: Both services are hosted on Render's free tier. If the app has been idle, the initial load may take 30–50 seconds for the backend instance to spin up.
+> **Note:** Both services are hosted on Render's free tier. If the app has been idle, the initial load may take **30–50 seconds** while the backend instance starts up.
+
+---
