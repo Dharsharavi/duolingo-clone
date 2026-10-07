@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar";
 import { Flame, Zap, Heart, Shield, RotateCcw } from "lucide-react";
 
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "https://duolingo-clone-ycq7.onrender.com";
+
 interface UserProfile {
   xp: number;
   username: string;
@@ -19,7 +22,7 @@ export default function ProfilePage() {
 
   const fetchUserData = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/user", {
+      const res =await fetch(`${API_URL}/api/user`, {
         cache: "no-store",
       });
       const data = await res.json();
@@ -117,7 +120,7 @@ export default function ProfilePage() {
               {/* Button 1: Yesterday (-1 Day) */}
               <button
                 onClick={async () => {
-                  await fetch("http://127.0.0.1:8000/api/user/simulate-day", {
+                 await fetch(`${API_URL}/api/user/simulate-day`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ days_to_advance: 1 }),
@@ -133,7 +136,7 @@ export default function ProfilePage() {
               {/* Button 2: Missed 2 Days */}
               <button
                 onClick={async () => {
-                  const res = await fetch("http://127.0.0.1:8000/api/user/simulate-day", {
+                  const res = await fetch(`${API_URL}/api/user/simulate-day`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ days_to_advance: 2 }),
@@ -151,7 +154,7 @@ export default function ProfilePage() {
               {/* Button 3: Reset Demo Progress */}
               <button
                 onClick={async () => {
-                  await fetch("http://127.0.0.1:8000/api/user/reset-progress", {
+                  await fetch(`${API_URL}/api/user/reset-progress`, {
                     method: "POST",
                   });
                   alert("Progress Reset! Lesson 1 is completed and Lesson 2 is Active.");
