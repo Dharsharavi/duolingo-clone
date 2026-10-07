@@ -51,7 +51,7 @@ export default function WelcomePage() {
 
           <div className="w-full flex flex-col gap-3">
             <Link
-              href="/"
+              href="/?started=true"
               className="w-full py-4 text-center btn-3d-green text-sm uppercase tracking-wider font-extrabold flex items-center justify-center gap-2"
             >
               <span>Get Started</span>
