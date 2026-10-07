@@ -6,6 +6,9 @@ import { Check, Star, Lock } from "lucide-react";
 import Sidebar from "../components/Sidebar";
 import TopBar from "../components/TopBar";
 
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "https://duolingo-clone-ycq7.onrender.com";
+
 interface Lesson {
   id: number;
   title: string;
@@ -38,8 +41,8 @@ export default function HomePage() {
     async function loadData() {
       try {
         const [userRes, unitsRes] = await Promise.all([
-          fetch("http://127.0.0.1:8000/api/user"),
-          fetch("http://127.0.0.1:8000/api/units"),
+          fetch(`${API_URL}/api/user`),
+          fetch(`${API_URL}/api/units`),
         ]);
 
         const userData = await userRes.json();
