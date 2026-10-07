@@ -4,6 +4,9 @@ import { useEffect, useState, use } from "react";
 import { useRouter } from "next/navigation";
 import { X, Heart, CheckCircle2, XCircle, Volume2 } from "lucide-react";
 
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "https://duolingo-clone-ycq7.onrender.com";
+
 // Synthesizes playful game sounds using browser Web Audio API
 const playSound = (type: "correct" | "wrong" | "complete") => {
   if (typeof window === "undefined") return;
@@ -38,17 +41,17 @@ const playSound = (type: "correct" | "wrong" | "complete") => {
     osc.stop(ctx.currentTime + 0.5);
   }
 };
-const fetchUserData = async () => {
-    try {
-      const res = await fetch("http://127.0.0.1:8000/api/user");
-      const data = await res.json();
-      setUser(data);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+// const fetchUserData = async () => {
+//     try {
+//       const res = await fetch("http://127.0.0.1:8000/api/user");
+//       const data = await res.json();
+//       setUser(data);
+//     } catch (err) {
+//       console.error(err);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
 
 const speakSpanish = (text: string) => {
   if (typeof window !== "undefined" && "speechSynthesis" in window) {
@@ -100,8 +103,8 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
     async function fetchLesson() {
       try {
         const [lessonRes, userRes] = await Promise.all([
-          fetch(`http://127.0.0.1:8000/api/lessons/${lessonId}`),
-          fetch(`http://127.0.0.1:8000/api/user`)
+          fetch(`${API_URL}/api/lessons/${lessonId}`),
+          fetch(`${API_URL}/api/user`)
         ]);
 
         if (!lessonRes.ok) throw new Error("Lesson not found");
@@ -175,7 +178,7 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
       setSelectedRight(null);
     } else {
       playSound("complete");
-      await fetch(`http://127.0.0.1:8000/api/lessons/${lessonId}/complete`, {
+      await fetch(`${API_URL}/api/lessons/${lessonId}/complete`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ hearts_left: hearts, xp_earned: 15 })
