@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { Flame, Zap, Heart, Plus } from "lucide-react";
 
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "https://duolingo-clone-ycq7.onrender.com";
+
 interface TopBarProps {
   streak: number;
   gems: number;
@@ -17,7 +20,7 @@ export default function TopBar({ streak, gems, hearts: initialHearts }: TopBarPr
   const handleRefill = async () => {
     setRefilling(true);
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/user/refill-hearts", { method: "POST" });
+      const res = await fetch(`${API_URL}/api/user/refill-hearts`, { method: "POST" });
       const data = await res.json();
       setHearts(data.hearts);
       setIsModalOpen(false);
