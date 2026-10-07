@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar";
 
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "https://duolingo-clone-ycq7.onrender.com";
+
 interface LeaderboardUser {
   id: number;
   rank: number;
@@ -17,7 +20,7 @@ export default function LeaderboardPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/leaderboard")
+    fetch(`${API_URL}/api/leaderboard`)
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.error(err))
